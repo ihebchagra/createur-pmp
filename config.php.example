@@ -1,0 +1,17 @@
+<?php
+// Database configuration
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'database_name');
+define('DB_USER', 'database_user');
+define('DB_PASS', 'database_password');
+define('DB_CHARSET', 'utf8mb4');
+
+// SMTP configuration
+define('SMTP_HOST', 'smtp.example.com');
+define('SMTP_USER', 'smtp_user');
+define('SMTP_PASS', 'smtp_password');
+define('SMTP_PORT', 465);
+define('SMTP_FROM', 'from@example.com');
+define('SMTP_FROM_NAME', 'Créateur PMP');
+define('SMTP_REPLY_TO', 'reply@example.com');
+define('SMTP_REPLY_TO_NAME', 'Information');
