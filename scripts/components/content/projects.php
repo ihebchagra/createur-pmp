@@ -24,6 +24,10 @@ if (isset($_SESSION['_internal_user_projects']) && is_array($_SESSION['_internal
                                 <input type="hidden" name="project_id" value="{$project['project_id']}">
                                 <button type="submit">Analyser Résultats</button>
                             </form>
+                            <form method="get" action="/shares">
+                                <input type="hidden" name="project_id" value="{$project['project_id']}">
+                                <button type="submit">Gérer les Partages</button>
+                            </form>
                             <form method="post" action="/delete-project" x-data @submit.prevent="
                             modal.confirm('Êtes-vous sûr de vouloir supprimer ce PMP ?','Confirmation').then(result=>{if (result) \$el.submit()})
                             ">

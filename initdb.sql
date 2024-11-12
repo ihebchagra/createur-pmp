@@ -156,3 +156,13 @@ CREATE TABLE IF NOT EXISTS `attempt_answers` (
   KEY `question_id` (`question_id`) USING BTREE,
   KEY `attempt_id` (`attempt_id`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `project_shares` (
+  `share_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `project_id` INT(10) UNSIGNED NOT NULL,
+  `shared_with_email` VARCHAR(249) NOT NULL COLLATE 'utf8mb4_unicode_ci',
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`share_id`),
+  UNIQUE KEY `project_email` (`project_id`, `shared_with_email`),
+  KEY `project_id` (`project_id`) USING BTREE
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

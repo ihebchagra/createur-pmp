@@ -36,6 +36,9 @@ if ($method == 'GET') {
             case '/edit':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/edit.php';
                 break;
+            case '/shares':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../pages/shares.php';
+                break;
             default:
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/404.php';
                 break;
@@ -73,6 +76,9 @@ if ($method == 'GET') {
                 break;
             case '/save-project':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/save-project.php';
+                break;
+            case '/manage-shares':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/manage-shares.php';
                 break;
             case '/save-attempt':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/save-attempt.php';
