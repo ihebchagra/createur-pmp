@@ -100,6 +100,11 @@
     font-size: small;
 }
 
+.footer>p>a {
+    color: var(--pico-primary-inverse);
+    text-decoration: underline;
+}
+
 main.container {
     padding: 1rem;
 }

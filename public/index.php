@@ -133,7 +133,8 @@ if ($method == 'GET') {
     </div>
 
     <footer class="footer">
-        <p> <?php echo date('Y'); ?> Créateur PMP est un project open source publié sous la license GPL-3</p>
+        <p> <?php echo date('Y'); ?> Créateur PMP est un project open source publié sous la license GPL-3 - <a
+                href="https://github.com/ihebchagra/createur-pmp" class="white-link">GitHub</a></p>
     </footer>
     <script src="static/js/modal.js"></script>
 </body>
