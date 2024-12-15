@@ -39,6 +39,9 @@ if ($method == 'GET') {
             case '/shares':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/shares.php';
                 break;
+            case '/reset-password':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../pages/reset-password.php';
+                break;
             default:
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/404.php';
                 break;
@@ -54,8 +57,14 @@ if ($method == 'GET') {
             case '/verify':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/verify.php';
                 break;
+            case '/forgot-password':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../pages/forgot-password.php';
+                break;
             case '/login':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/login.php';
+                break;
+            case '/reset-password':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../pages/reset-password.php';
                 break;
             default:
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/404.php';
@@ -73,6 +82,10 @@ if ($method == 'GET') {
                 break;
             case '/delete-project':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/delete-project.php';
+                break;
+                // DANGER
+            case '/delete-user':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/delete_user.php';
                 break;
             case '/save-project':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/save-project.php';
@@ -94,6 +107,12 @@ if ($method == 'GET') {
                 break;
             case '/login':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/login.php';
+                break;
+            case '/forgot-password':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/forgot-password.php';
+                break;
+            case '/reset-password':
+                require $_SERVER['DOCUMENT_ROOT'] . '/../scripts/auth/reset-password.php';
                 break;
             default:
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/404.php';
@@ -128,7 +147,7 @@ if ($method == 'GET') {
         }; ?>
 
         <?php
-            echo $content;
+        echo $content;
         ?>
     </div>
 

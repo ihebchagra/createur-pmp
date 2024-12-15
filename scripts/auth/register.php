@@ -27,8 +27,8 @@ try {
         $mail->isHTML(true);
         $mail->CharSet = 'UTF-8';
         $mail->Subject = 'Vérification de votre compte créateur PMP';
-        $mail->Body = 'Merci de vous être inscrit sur Créateur PMP. Veuillez cliquer sur le lien suivant pour vérifier votre adresse e-mail : <a href="https://focused-swartz.102-211-208-104.plesk.page/verify?selector=' . urlencode($selector) . '&token=' . urlencode($token) . '">Vérifier votre adresse e-mail</a>';
-        $mail->AltBody = 'Merci de vous être inscrit sur Créateur PMP. Veuillez cliquer sur le lien suivant pour vérifier votre adresse e-mail : https://focused-swartz.102-211-208-104.plesk.page/verify?selector=' . urlencode($selector) . '&token=' . urlencode($token);
+        $mail->Body = 'Merci de vous être inscrit sur Créateur PMP. Veuillez cliquer sur le lien suivant pour vérifier votre adresse e-mail : <a href="https://pmp.iheb.tn/verify?selector=' . urlencode($selector) . '&token=' . urlencode($token) . '">Vérifier votre adresse e-mail</a>';
+        $mail->AltBody = 'Merci de vous être inscrit sur Créateur PMP. Veuillez cliquer sur le lien suivant pour vérifier votre adresse e-mail : https://pmp.iheb.tn/verify?selector=' . urlencode($selector) . '&token=' . urlencode($token);
 
         $mail->send();
     });
