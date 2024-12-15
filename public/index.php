@@ -39,9 +39,6 @@ if ($method == 'GET') {
             case '/shares':
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/shares.php';
                 break;
-            case '/reset-password':
-                require $_SERVER['DOCUMENT_ROOT'] . '/../pages/reset-password.php';
-                break;
             default:
                 require $_SERVER['DOCUMENT_ROOT'] . '/../pages/404.php';
                 break;
@@ -134,6 +131,7 @@ if ($method == 'GET') {
     <script defer src="static/js/persist.js"></script>
     <script defer src="static/js/autoanimate.js"></script>
     <script defer src="static/js/alpine.js"></script>
+    <link rel="shortcut icon" href="static/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="static/css/pico.css">
     <link rel="stylesheet" href="static/css/main.css">
 </head>
