@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $auth->resetPassword($selector, $token, $password);
-        header('Location: /login?success=passwordreset');
+        header('Location: /login?t=reset');
         exit();
     } catch (\Delight\Auth\InvalidSelectorTokenPairException $e) {
         header('Location: /reset-password?error=invalidtoken');

@@ -4,6 +4,9 @@ if (isset($_GET['t'])) {
         case 'verify':
             $toast = 'Un email de vérification a été envoyé à votre adresse email.';
             break;
+        case 'reset':
+            $toast = 'Réinitialisation complète.';
+            break;
         case 'error':
             $toast = 'Une erreur est survenue. Veuillez réessayer.';
             break;

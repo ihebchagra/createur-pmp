@@ -34,7 +34,7 @@ try {
     });
 
     // Redirect or notify the user
-    header('Location: /');
+    header('Location: /?t=verify');
     exit();
 } catch (\Delight\Auth\InvalidEmailException $e) {
     header('Location: /forgot-password?error=invalidemail');
