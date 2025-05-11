@@ -18,10 +18,10 @@ if (!$project) {
 }
 
 // Create new attempt
-$stmt = $db->prepare('INSERT INTO attempts (student_name, project_id, created_at) VALUES (?, ?, NOW())');
+$stmt = $db->prepare('INSERT INTO attempts (student_name, project_id, created_at) VALUES (?, ?, CURRENT_TIMESTAMP)');
 $stmt->execute([
-    trim($_POST['student_name']),
-    $_POST['project_id']
+  trim($_POST['student_name']),
+  $_POST['project_id']
 ]);
 
 $attempt_id = $db->lastInsertId();

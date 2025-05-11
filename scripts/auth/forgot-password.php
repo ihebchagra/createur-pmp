@@ -8,9 +8,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../config.php';
 
 try {
-    $auth->forgotPassword($_POST['email'], function ($selector, $token) {
+    $mail = null; // Initialize $mail outside the callback to make it accessible in catch blocks
+    $auth->forgotPassword($_POST['email'], function ($selector, $token) use (&$mail) {
         $mail = new PHPMailer(true);
         // Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_OFF; // Set to SMTP::DEBUG_SERVER for debugging
         $mail->isSMTP();
         $mail->Host = SMTP_HOST;
         $mail->SMTPAuth = true;
@@ -45,5 +47,6 @@ try {
 } catch (\Delight\Auth\TooManyRequestsException $e) {
     header('Location: /forgot-password?error=toomanyrequests');
 } catch (\PHPMailer\PHPMailer\Exception $e) {
+    error_log("SMTP Error: " . ($mail ? $mail->ErrorInfo : $e->getMessage()));
     header('Location: /forgot-password?error=emailsend');
 }

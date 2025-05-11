@@ -3,13 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/../config.php';
 
-$host = DB_HOST;
-$db = DB_NAME;
-$user = DB_USER;
-$pass = DB_PASS;
-$charset = DB_CHARSET;
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$dsn = "sqlite:" . $_SERVER['DOCUMENT_ROOT'] . "/../database.sqlite";
 $options = [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -17,7 +11,7 @@ $options = [
 ];
 
 try {
-    $db = new PDO($dsn, $user, $pass, $options);
+    $db = new PDO($dsn, null, null, $options);
 } catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int) $e->getCode());
 }
